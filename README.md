@@ -183,13 +183,13 @@
 #### UPDATE api/users/{user_id}/ #
 
 ##### Request #
-<code><pre>{
+<pre><code>{
     "favorite_book": &lt;USER INPUT>
 }
 </code></pre>
 
 ##### Response #
-<code><pre>{
+<pre><code>{
     "success": true,
     "data": {
         "id": &lt;ID>,
