@@ -1,11 +1,10 @@
-# BackendFinalProject
-## API Specification
+# BackendFinalProject — API Specification #
 ###### by Sophia Tan #
 
-### Book Routes #
+## Book Routes #
 *** 
 
-#### Get all books
+### Get all books
 #### GET /api/books/
 
 ##### Response #
@@ -32,8 +31,9 @@
     ]
 }
 </code></pre>
+*** 
 
-#### Create a book #
+### Create a book #
 #### POST /api/books/ #
 
 ##### Request #
@@ -56,8 +56,9 @@
     }
 }
 </code></pre>
+*** 
 
-#### Get a Specific Book #
+### Get a Specific Book #
 #### GET /api/books/{book_id}/ #
 
 ##### Response #
@@ -73,8 +74,9 @@
     }
 }
 </code></pre>
+*** 
 
-#### Delete a specific book #
+### Delete a specific book #
 #### DELETE /api/books/{book_id}/ #
 
 ##### Response #
@@ -91,10 +93,10 @@
 }
 </code></pre>
 
-### User Routes #
+## User Routes #
 *** 
 
-#### Get all users #
+### Get all users #
 #### GET /api/users/
 
 ##### Response #
@@ -121,8 +123,9 @@
     ]
 }
 </code></pre>
+*** 
 
-#### Get a specific user #
+### Get a specific user #
 #### GET /api/users/{user_id}/ #
 
 ##### Response #
@@ -137,8 +140,9 @@
         "recommended_books": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ]
     },
 </code></pre>
+***
 
-#### Create a user #
+### Create a user #
 #### POST /api/users/ #
 
 ##### Request #
@@ -162,8 +166,9 @@
     }
 }
 </code></pre>
+***
 
-#### Add a user to recommending list/ book to recommended list #
+### Add a user to recommending list/ book to recommended list #
 #### POST /api/books/{book_id}/add/
 
 ##### Request #
@@ -178,8 +183,9 @@
     "data": &lt;SERIALIZED USER>
 }
 </code></pre>
+***
 
-#### Update favorite book #
+### Update favorite book #
 #### UPDATE api/users/{user_id}/ #
 
 ##### Request #
@@ -201,8 +207,9 @@
     }
 }
 </code></pre>
+***
 
-#### Delete recommended book/recommending user #
+### Delete recommended book/recommending user #
 #### POST /api/users/{user_id}/delete_recommended/ #
 
 ##### Request #
@@ -217,8 +224,9 @@
     "data": &lt;SERIALIZED USER>
 }
 </code></pre>
+***
 
-#### Add book to read list #
+### Add book to read list #
 #### POST /api/users/{user_id}/add_read/ #
 
 ##### Request #
@@ -234,10 +242,10 @@
 }
 </code></pre>
 
-### Review Routes #
+## Review Routes #
 ***
 
-#### Create A Review #
+### Create A Review #
 #### POST /api/books/{book_id}/review/ #
 
 ##### Request #
@@ -260,8 +268,9 @@
     }
 }
 </code></pre>
+***
 
-#### Update review #
+### Update review #
 #### POST /api/reviews/{review_id}/update/
 
 ##### Request #
@@ -277,8 +286,9 @@
     "data": &lt;SERIALIZED REVIEW>
 }
 </pre></code
+***
 
-#### Delete review #
+### Delete review #
 #### DELETE /api/reviews/{review_id}/
 
 ##### Response #
