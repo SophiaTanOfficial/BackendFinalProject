@@ -257,20 +257,42 @@
         "review":  &lt;USER INPUT FOR REVIEW>,
         "recommend": &lt;USER INPUT FOR RECOMMEND>,
         "book": &lt;SERIALIZED BOOK WITHOUT REVIEWS, USERS_WHO_READ, OR RECOMMENDING_USERS FIELDS>
+    }
+}
 </code></pre>
 
+#### Update review #
+#### POST /api/reviews/{review_id}/update/
 
+##### Request #
+<pre><code>{
+    "review" &lt;USER INPUT OR NULL>,
+    "recommend": &lt;YES, NO, OR NULL>
+}
+</pre></code>
 
+##### Response #
+<pre><code>{
+    "success": true,
+    "data": &lt;SERIALIZED REVIEW>
+}
+</pre></code
 
+#### Delete review #
+#### DELETE /api/reviews/{review_id}/
 
-
-
-
-
-
-
-
-
+##### Response #
+<pre><code>{
+    "success": true,
+    "data": {
+        "id": &lt;ID>,
+        "username": &lt;USER INPUT FOR USERNAME>,
+        "review": &lt;USER INPUT FOR REVIEW>,
+        "recommend": &lt;USER INPUT FOR RECOMMEND>,
+        "book": &lt;SERIALIZED BOOK WITHOUT REVIEWS, USERS_WHO_READ, OR RECOMMENDING_USERS FIELDS>
+    }
+}
+</code></pre>
 
 
 
