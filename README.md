@@ -136,7 +136,7 @@
         "id": &lt;ID>,
         "name": &lt;USER INPUT FOR NAME>,
         "username": &lt;USER INPUT FOR USERNAME>,
-        "favorite_book": &lt;USER INPUT FOR FAVORITE BOOK OR NULL>
+        "favorite_book": &lt;USER INPUT FOR FAVORITE BOOK OR NULL>,
         "read": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ], 
         "recommended_books": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ]
     }
@@ -151,7 +151,7 @@
 <pre><code>{
     "name": &lt;USER INPUT>,
     "username": &lt;USER INPUT>,
-    "favorite_book": &lt;USER INPUT OR NULL>,
+    "favorite_book": &lt;USER INPUT OR NULL>
 }
 </code></pre>
 
