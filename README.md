@@ -58,11 +58,10 @@
 </code></pre>
 
 #### Get a Specific Book #
-#### GET /api/books/{id}/ #
+#### GET /api/books/{book_id}/ #
 
 ##### Response #
-<pre><code>
-{
+<pre><code>{
     "success": true,
     "data": {
         "id": &lt;ID>,
@@ -79,8 +78,7 @@
 #### DELETE /api/books/{book_id}/ #
 
 ##### Response #
-<pre><code>
-{
+<pre><code>{
     "success": true,
     "data": {
         "id": &lt;ID>,
@@ -100,8 +98,8 @@
 #### GET /api/users/
 
 ##### Response #
-<pre><code>
-{   "success": true,
+<pre><code>{   
+    "success": true,
     "data": [
         {
             "id": 1,
@@ -125,11 +123,10 @@
 </code></pre>
 
 #### Get a specific user #
-#### GET /api/users/{user_id}/#
+#### GET /api/users/{user_id}/ #
 
 ##### Response #
-<pre><code>
-{
+<pre><code>{
     "success": true,
     "data": {
         "id": &lt;ID>,
@@ -145,8 +142,7 @@
 #### POST /api/users/ #
 
 ##### Request #
-<pre><code>
-{
+<pre><code>{
     "name": &lt;USER INPUT>,
     "username": &lt;USER INPUT>,
     "favorite_book": &lt;USER INPUT OR NULL>,
@@ -154,8 +150,7 @@
 </code></pre>
 
 ##### Response #
-<pre><code>
-{
+<pre><code>{
     "success": true,
     "data": {
         "id": &lt;ID>
@@ -172,15 +167,13 @@
 #### POST /api/books/{book_id}/add/
 
 ##### Request #
-<pre><code>
-{
+<pre><code>{
     "user_id": &lt;USER INPUT>
 }
 </code></pre>
 
 ##### Response #
-<pre><code>
-{
+<pre><code>{
     "success": true,
     "data": &lt;SERIALIZED USER>
 }
@@ -190,15 +183,13 @@
 #### UPDATE api/users/{user_id}/ #
 
 ##### Request #
-<code><pre>
-{
+<code><pre>{
     "favorite_book": &lt;USER INPUT>
 }
 </code></pre>
 
 ##### Response #
-<code><pre>
-{
+<code><pre>{
     "success": true,
     "data": {
         "id": &lt;ID>,
@@ -209,10 +200,66 @@
         "recommended_books": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ]
     }
 }
-
 </code></pre>
 
-#### Delete recommended 
+#### Delete recommended book/recommending user #
+#### POST /api/users/{user_id}/delete_recommended/ #
+
+##### Request #
+<pre><code>{
+    "book_id": &lt;USER INPUT>
+}
+</code></pre>
+
+##### Response #
+<pre><code>{
+    "success": true,
+    "data": &lt;SERIALIZED USER>
+}
+</code></pre>
+
+#### Add book to read list #
+#### POST /api/users/{user_id}/add_read/ #
+
+##### Request #
+<pre><code>{
+    "book_id": &lt;USER INPUT>
+}
+</code></pre>
+
+##### Response #
+<pre><code>{
+    "success": true,
+    "data": &lt;SERIALIZED USER>
+}
+</code></pre>
+
+### Review Routes #
+***
+
+#### Create A Review #
+#### POST /api/books/{book_id}/review/ #
+
+##### Request #
+<pre><code>{
+    "username": &lt;USER INPUT>,
+    "review": &lt;USER INPUT>,
+    "recommend": "Yes" or "No"
+}
+</code></pre>
+
+##### Response #
+<pre><code>{
+    "success": true,
+    "data": {
+        "id": &lt;ID>,
+        "username": &lt;USER INPUT FOR USERNAME>,
+        "review":  &lt;USER INPUT FOR REVIEW>,
+        "recommend": &lt;USER INPUT FOR RECOMMEND>,
+        "book": &lt;SERIALIZED BOOK WITHOUT REVIEWS, USERS_WHO_READ, OR RECOMMENDING_USERS FIELDS>
+</code></pre>
+
+
 
 
 
