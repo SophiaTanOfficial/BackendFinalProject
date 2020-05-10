@@ -139,7 +139,8 @@
         "favorite_book": &lt;USER INPUT FOR FAVORITE BOOK OR NULL>
         "read": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ], 
         "recommended_books": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ]
-    },
+    }
+}
 </code></pre>
 ***
 
@@ -158,7 +159,7 @@
 <pre><code>{
     "success": true,
     "data": {
-        "id": &lt;ID>
+        "id": &lt;ID>,
         "name": &lt;USER INPUT FOR NAME>,
         "username": &lt;USER INPUT FOR USERNAME>,
         "favorite_book": &lt;USER INPUT FOR FAVORITE_BOOK OR NULL>,
@@ -202,7 +203,7 @@
         "id": &lt;ID>,
         "name": &lt;USER INPUT FOR NAME>,
         "username": &lt;USER INPUT FOR USERNAME>,
-        "favorite_book": &lt;USER INPUT FOR FAVORITE BOOK>
+        "favorite_book": &lt;USER INPUT FOR FAVORITE BOOK>,
         "read": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ], 
         "recommended_books": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ]
     }
@@ -246,7 +247,7 @@
 ## Review Routes #
 ***
 
-### Create A Review #
+### Create a review #
 #### POST /api/books/{book_id}/review/ #
 
 ##### Request #
