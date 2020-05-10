@@ -76,7 +76,7 @@
 </code></pre>
 
 #### Delete a specific book #
-#### DELETE /api/books/{id}/ #
+#### DELETE /api/books/{book_id}/ #
 
 ##### Response #
 <pre><code>
@@ -122,13 +122,97 @@
         ...
     ]
 }
-            
-
-    
 </code></pre>
 
+#### Get a specific user #
+#### GET /api/users/{user_id}/#
 
+##### Response #
+<pre><code>
+{
+    "success": true,
+    "data": {
+        "id": &lt;ID>,
+        "name": &lt;USER INPUT FOR NAME>,
+        "username": &lt;USER INPUT FOR USERNAME>,
+        "favorite_book": &lt;USER INPUT FOR FAVORITE BOOK OR NULL>
+        "read": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ], 
+        "recommended_books": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ]
+    },
+</code></pre>
 
+#### Create a user #
+#### POST /api/users/ #
+
+##### Request #
+<pre><code>
+{
+    "name": &lt;USER INPUT>,
+    "username": &lt;USER INPUT>,
+    "favorite_book": &lt;USER INPUT OR NULL>,
+}
+</code></pre>
+
+##### Response #
+<pre><code>
+{
+    "success": true,
+    "data": {
+        "id": &lt;ID>
+        "name": &lt;USER INPUT FOR NAME>,
+        "username": &lt;USER INPUT FOR USERNAME>,
+        "favorite_book": &lt;USER INPUT FOR FAVORITE_BOOK OR NULL>,
+        "read": [],
+        "recommended_books": []
+    }
+}
+</code></pre>
+
+#### Add a user to recommending list/ book to recommended list #
+#### POST /api/books/{book_id}/add/
+
+##### Request #
+<pre><code>
+{
+    "user_id": &lt;USER INPUT>
+}
+</code></pre>
+
+##### Response #
+<pre><code>
+{
+    "success": true,
+    "data": &lt;SERIALIZED USER>
+}
+</code></pre>
+
+#### Update favorite book #
+#### UPDATE api/users/{user_id}/ #
+
+##### Request #
+<code><pre>
+{
+    "favorite_book": &lt;USER INPUT>
+}
+</code></pre>
+
+##### Response #
+<code><pre>
+{
+    "success": true,
+    "data": {
+        "id": &lt;ID>,
+        "name": &lt;USER INPUT FOR NAME>,
+        "username": &lt;USER INPUT FOR USERNAME>,
+        "favorite_book": &lt;USER INPUT FOR FAVORITE BOOK>
+        "read": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ], 
+        "recommended_books": [ &lt;SERIALIZED BOOK WITHOUT AUTHOR, REVIEWS, USERS_WHO_READ, AND RECOMMENDING_USERS FIELDS>, ... ]
+    }
+}
+
+</code></pre>
+
+#### Delete recommended 
 
 
 
