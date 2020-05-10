@@ -1,14 +1,15 @@
 # BackendFinalProject
-API Specification
- -- Sophia Tan
+## API Specification
+###### by Sophia Tan #
 
-----BOOK ROUTES------
+### Book Routes #
+*** 
 
-Get all books
-GET /api/books/
+#### Get all books
+#### GET /api/books/
 
-Response
-{
+##### Response #
+<pre><code>{
     "success": true,
     "data": [
         {
@@ -30,18 +31,20 @@ Response
         ...
     ]
 }
+</code></pre>
 
-Create a book
-POST /api/books/
+#### Create a book #
+#### POST /api/books/ #
 
-Request
-{
+##### Request #
+<pre><code>{
     "title": <USER INPUT>,
     "author": <USER INPUT>
 }
+</code></pre>
 
-Response
-{
+##### Response
+<pre><code>{
     "success": true,
     "data": {
         "id": <ID>,
@@ -52,6 +55,7 @@ Response
         "recommending_users": []
     }
 }
+</code><pre>
 
 
 
